@@ -20,7 +20,6 @@ dist
 # Other
 .DS_Store
 wandb
-output
 
 checkpoints
 ckpts*

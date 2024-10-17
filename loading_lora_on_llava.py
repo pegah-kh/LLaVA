@@ -42,7 +42,7 @@ from transformers import (
 # print(output.keys())
 
 
-tokenizer = AutoTokenizer.from_pretrained("llava-hf/llava-1.5-7b-hf", use_fast=False)
+tokenizer = AutoTokenizer.from_pretrained("llava-hf/llava-1.5-7b-hf", use_fast=False, cache_dir='/lustre/fswork/projects/rech/lqq/uja56bm/llava/models')
 
 
 

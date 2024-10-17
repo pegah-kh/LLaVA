@@ -26,8 +26,8 @@ class CLIPVisionTower(nn.Module):
             print('{} is already loaded, `load_model` called again, skipping.'.format(self.vision_tower_name))
             return
 
-        self.image_processor = CLIPImageProcessor.from_pretrained(self.vision_tower_name)
-        self.vision_tower = CLIPVisionModel.from_pretrained(self.vision_tower_name, device_map=device_map)
+        self.image_processor = CLIPImageProcessor.from_pretrained(self.vision_tower_name, cache_dir='/lustre/fswork/projects/rech/lqq/uja56bm/llava/models')
+        self.vision_tower = CLIPVisionModel.from_pretrained(self.vision_tower_name, device_map=device_map, cache_dir='/lustre/fswork/projects/rech/lqq/uja56bm/llava/models')
         self.vision_tower.requires_grad_(False)
 
         self.is_loaded = True
@@ -115,6 +115,8 @@ class CLIPVisionTowerS2(CLIPVisionTower):
             print('{} is already loaded, `load_model` called again, skipping.'.format(self.vision_tower_name))
             return
 
+        # self.image_processor = CLIPImageProcessor.from_pretrained(self.vision_tower_name, cache_dir='/lustre/fswork/projects/rech/lqq/uja56bm/llava/models')
+        # self.vision_tower = CLIPVisionModel.from_pretrained(self.vision_tower_name, device_map=device_map, cache_dir='/lustre/fswork/projects/rech/lqq/uja56bm/llava/models')
         self.image_processor = CLIPImageProcessor.from_pretrained(self.vision_tower_name)
         self.vision_tower = CLIPVisionModel.from_pretrained(self.vision_tower_name, device_map=device_map)
         self.vision_tower.requires_grad_(False)
